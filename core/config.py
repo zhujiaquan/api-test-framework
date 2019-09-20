@@ -2,9 +2,9 @@
 # -*- coding: UTF-8 -*-
 # 基础包：配置服务
 
-import ConfigParser
+import configparser
 
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 
 
 def get_config(filename):
@@ -15,10 +15,9 @@ def get_config(filename):
     """
     global config
     try:
-        print("Read config: " + filename)
         config.read(filename)
         return True
-    except Exception, e:
+    except Exception as e:
         print ("读取配置失败 %s" % e)
 
 
@@ -32,7 +31,7 @@ def get_data(title, key):
     try:
         value = config.get(title, key)
         return value
-    except Exception, e:
+    except Exception as e:
         print ("获取参数失败 %s" % e)
 
 
@@ -43,7 +42,7 @@ def get_title_list():
     """
     try:
         title = config.sections()
-        return str(title).decode("string_escape")
-    except Exception, e:
+        return str(title)
+    except Exception as e:
         print ("获取title信息失败 %s", e)
 

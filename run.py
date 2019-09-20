@@ -5,8 +5,6 @@ import function.func as func
 import constants as cs
 import sys
 
-#print(sys.argv[1])
-
 FILENAME = "login.ini"
 
 if __name__ == "__main__":

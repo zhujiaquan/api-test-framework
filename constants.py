@@ -6,7 +6,7 @@ import sys
 import time
 import os
 
-DOMAIN = 'http://192.168.1.103'
+DOMAIN = 'http://192.168.1.100'
 
 REPORT_NAME = 'Test Report'
 TITLE = 'All Data prepare the SQL'

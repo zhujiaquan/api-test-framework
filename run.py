@@ -15,4 +15,4 @@ if __name__ == "__main__":
     func.run_test(filename=cs.CASE_PATH+FILENAME)
 
     """3.统计测试报告结果"""
-    #func.write_report_result()
+    func.write_report_result()

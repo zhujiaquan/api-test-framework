@@ -143,7 +143,6 @@ def run_test(filename):
         :return: 测试报告
         """
         reportName = eval(conf.get_data(title=cs.REPORT_NAME, key=cs.REPORT))
-
         _filename = cs.REPORT_PATH + reportName + cs.NOW
         try:
             if os.path.exists(_filename):
@@ -163,16 +162,16 @@ def write_report_result():
         reportName = eval(conf.get_data(title=cs.REPORT_NAME, key=cs.REPORT))
         _filename = cs.REPORT_PATH + reportName + cs.NOW
         try:
-            f = file(_filename)
+            f = open(_filename, 'r')
             content = f.read()
             if content != None:
                 _count = content.count("Number")
                 _fail = content.count("Case Fail")
                 _pass = content.count("Case Pass")
                 space = content.split('\n')
-                space.insert(0,cs.RESULT_CONTENT % (_count, _pass, _fail))
+                space.insert(0, cs.RESULT_CONTENT % (_count, _pass, _fail))
                 _content_ = '\n'.join(space)
-                fp = file(_filename,'r+')
+                fp = open(_filename, 'r+')
                 fp.write(_content_)
         except Exception as e:
             logging.error("文件路径不存在 %s", e)
